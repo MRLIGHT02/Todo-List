@@ -122,12 +122,13 @@ li button:hover {
     }
 
     input[type="text"] {
-        width: calc(100% - 60px); /* Adjust input width */
+        width: calc(100% - 30px); /* Adjust input width */
     }
 
     button {
         padding: 10px; /* Smaller button padding */
         font-size: 14px; /* Smaller font size for buttons */
+        margin-left: 0; /* Remove left margin for full-width buttons */
     }
 
     li {
@@ -136,7 +137,8 @@ li button:hover {
     }
 
     li button {
-        width: 100%; /* Make delete button full width */
-        margin-top: 10px; /* Add margin for spacing */
+        width: 50%; /* Make delete button full width */
+        margin-top: 10px;
+        margin-bottom: 10px; /* Add margin for spacing */
     }
 }
