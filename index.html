@@ -10,18 +10,27 @@
 
 <body>
     <div class="container">
-        <img src="./image.png" alt="Logo"> <!-- Replace with your logo URL -->
-        <h1>My To-Do List</h1>
+        <div class="image" style="display:flex; justify-content: center;justify-content: space-around;">
+            <img src="./image.png" alt="Logo" style="margin-right: -50px;">
+            <h1>
+                My To-Do List</h1>
+        </div>
+
+
+         <!-- Replace with your logo URL -->
         <div style="display: flex; justify-content: space-between;">
             <input id="add-content" type="text" placeholder="Add a new task...">
             <button id="add-btn">Add</button>
         </div>
         <ul class="tasks">
-            
+           
         </ul>
         <div class="searchdiv">
             <input type="search" name="search" id="search-input" placeholder="Search for a task...">
+            <button id="clear-btn-here">Clear+</button>
         </div>
+        <!-- <button id="clear-btn">Clear All Tasks</button>  -->
+
     </div>
     <script src="./script.js"></script>
 </body>

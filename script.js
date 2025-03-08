@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let addButton = document.getElementById('add-btn');
     let ulList = document.querySelector('ul');
     let searchBar = document.getElementById('search-input');
-    let divcontainer = document.getElementsByClassName('searchdiv');
-    let clearButton = document.getElementById('clear-btn'); // Reference the clear button
+    let clearButtonToclearwholelist = document.getElementById('clear-btn-here');
+   
 
     // Add task functionality
     addButton.addEventListener('click', function () {
@@ -37,9 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // display the search bar
         function displayFun() {
             if (ulList.children.length > 0) {
-                searchBar.style.display = 'flex'; // Show the search bar
+                searchBar.style.display = 'flex';
+                clearButtonToclearwholelist.style.display='block' // Show the search bar
             } else {
-                searchBar.style.display = 'none'; // Hide the search bar
+                searchBar.style.display = 'none';
+                clearButtonToclearwholelist.style.display ='none' // Hide the search bar
             }
         }
 
@@ -135,6 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load tasks from localStorage on page load
     loadTask(taskList);
     displayFun();
+
+    // Clear the whole list
+    clearButtonToclearwholelist.addEventListener('click', function () {
+        let confirmValue = confirm('Are you sure you want to clear the whole list?');
+        if (confirmValue) {
+            ulList.innerHTML = ''; // Clear the list
+            taskList = []; // Clear the taskList
+            localStorage.removeItem('task'); // Clear localStorage
+            displayFun(); // Update display
+        }
+    });
 
 
 });
